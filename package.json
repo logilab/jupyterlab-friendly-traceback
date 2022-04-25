@@ -1,0 +1,70 @@
+{
+  "name": "jupyterlab-friendly-traceback",
+  "version": "0.1.0",
+  "description": "Add a boutton to activate/deactivate friendly traceback",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension",
+    "friendly"
+  ],
+  "homepage": "https://forge.extranet.logilab.fr/open-source/jupyterlab-friendly-traceback",
+  "bugs": {
+    "url": "https://forge.extranet.logilab.fr/open-source/jupyterlab-friendly-traceback/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Logilab",
+    "email": "ogiorgis@logilab.fr"
+  },
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,js,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "hg",
+    "url": "https://forge.extranet.logilab.fr/open-source/jupyterlab-friendly-traceback"
+  },
+  "scripts": {
+    "build": "jlpm run build:lib && jlpm run build:labextension:dev",
+    "build:all": "jlpm run build:lib && jlpm run build:labextension",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True .",
+    "build:lib": "tsc",
+    "build:prod": "jlpm run clean && jlpm run build:lib && jlpm run build:labextension",
+    "clean": "jlpm run clean:lib",
+    "clean:all": "jlpm run clean:lib && jlpm run clean:labextension",
+    "clean:labextension": "rimraf jupyterlab_friendly_traceback/labextension",
+    "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
+    "install:extension": "jlpm run build",
+    "prepare": "jlpm run clean && jlpm run build:prod",
+    "watch": "run-p watch:src watch:labextension",
+    "watch:labextension": "jupyter labextension watch .",
+    "watch:src": "tsc -w"
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^3.3.0",
+    "@jupyterlab/launcher": "^3.3.0",
+    "@jupyterlab/ui-components": "^3.3.0",
+    "@jupyterlab/notebook": "^3.3.0"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^3.3.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.1",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.1.3"
+  },
+  "sideEffects": [
+    "style/*.css",
+    "style/*.svg",
+    "style/index.js"
+  ],
+  "jupyterlab": {
+    "extension": true,
+    "outputDir": "jupyterlab_friendly_traceback/labextension"
+  },
+  "styleModule": "style/index.js"
+}
