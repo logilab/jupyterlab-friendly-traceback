@@ -1,0 +1,6 @@
+dist
+jupyterlab_friendly_traceback.egg-info
+jupyterlab_friendly_traceback/labextension
+lib
+node_modules
+tsconfig.tsbuildinfo
