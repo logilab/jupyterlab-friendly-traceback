@@ -32,6 +32,21 @@ export class FriendlyButton
       tooltip: "Activate/DeActivate the friendly traceback",
     });
 
+    // handle kernel restart
+    panel.context.sessionContext.kernelChanged.connect(async () => {
+      const session = panel.context.sessionContext.session;
+      if (session) {
+        let code =
+          "from friendly.jupyter import *; from friendly.ipython_common.excepthook import enable, disable";
+        if (!this._enabled) {
+          code = code + ";disable()";
+        }
+        session.kernel.requestExecute({
+          code,
+        });
+      }
+    });
+
     const toggleButtonState = () => {
       const activeClass = "friendly-button-active";
       if (this._enabled) {
