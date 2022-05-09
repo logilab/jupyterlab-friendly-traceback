@@ -3,7 +3,11 @@ import {
   JupyterFrontEndPlugin,
 } from "@jupyterlab/application";
 import { DocumentRegistry } from "@jupyterlab/docregistry";
-import { INotebookModel, NotebookPanel } from "@jupyterlab/notebook";
+import {
+  INotebookTracker,
+  INotebookModel,
+  NotebookPanel,
+} from "@jupyterlab/notebook";
 import { DisposableDelegate, IDisposable } from "@lumino/disposable";
 import { ToolbarButton } from "@jupyterlab/apputils";
 import { LabIcon } from "@jupyterlab/ui-components";
@@ -19,6 +23,11 @@ export class FriendlyButton
   implements DocumentRegistry.IWidgetExtension<NotebookPanel, INotebookModel>
 {
   protected _enabled: boolean | null = null;
+
+  revert = () => {
+    this._enabled = false;
+  };
+
   public createNew(panel: NotebookPanel): IDisposable {
     const callback = () => {
       this.friendly(panel);
@@ -90,10 +99,16 @@ export class FriendlyButton
 const friendlyExtension: JupyterFrontEndPlugin<void> = {
   id: "jupyterlab-friendly-traceback",
   autoStart: true,
-  requires: [],
-  activate: (app: JupyterFrontEnd) => {
+  requires: [INotebookTracker],
+  activate: (app: JupyterFrontEnd, tracker: INotebookTracker) => {
     console.log("jupyterlab-friendly-traceback is activated!");
-    app.docRegistry.addWidgetExtension("Notebook", new FriendlyButton());
+    const fButton = new FriendlyButton();
+    app.docRegistry.addWidgetExtension("Notebook", fButton);
+
+    // handle re-open notebook
+    tracker.currentChanged.connect(async () => {
+      fButton.revert();
+    });
   },
 };
 
