@@ -19,6 +19,11 @@ $ pip install jupyterlab    # if using pip
 ```bash
 pip install jupyterlab-friendly-traceback
 ```
+
+## Screeshot
+
+![image](screenshot/friendly.png)
+
 ## Uninstall
 
 ```bash
