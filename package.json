@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-friendly-traceback",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Add a boutton to activate/deactivate friendly traceback",
   "keywords": [
     "jupyter",
@@ -46,24 +46,24 @@
     "watch:src": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^3.6.4",
-    "@jupyterlab/launcher": "^3.6.4",
-    "@jupyterlab/ui-components": "^3.6.4",
-    "@jupyterlab/notebook": "^3.6.4"
+    "@jupyterlab/application": "^4.0.10",
+    "@jupyterlab/launcher": "^4.0.10",
+    "@jupyterlab/notebook": "^4.0.10",
+    "@jupyterlab/ui-components": "^4.0.10"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^3.6.4",
+    "@jupyterlab/builder": "^4.0.10",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.2",
+    "eslint-plugin-react": "^7.31.10",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.1.1",
-    "eslint": "7.28.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "rimraf": "^3.0.2",
-    "typescript": "~4.3"
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "typescript": "~5.0.3"
   },
   "resolutions": {
-    "@jupyterlab/rendermime-interfaces": "3.6.4"
+    "@jupyterlab/rendermime-interfaces": "3.8.7"
   },
   "sideEffects": [
     "style/*.css",
@@ -74,5 +74,6 @@
     "extension": true,
     "outputDir": "jupyterlab_friendly_traceback/labextension"
   },
-  "styleModule": "style/index.js"
+  "styleModule": "style/index.js",
+  "packageManager": "yarn@3.6.3"
 }
