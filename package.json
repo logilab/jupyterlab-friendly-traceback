@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-friendly-traceback",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Add a boutton to activate/deactivate friendly traceback",
   "keywords": [
     "jupyter",
