@@ -868,13 +868,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jupyterlab/rendermime-interfaces@npm:3.8.7":
-  version: 3.8.7
-  resolution: "@jupyterlab/rendermime-interfaces@npm:3.8.7"
+"@jupyterlab/rendermime-interfaces@npm:^3.8.10":
+  version: 3.8.10
+  resolution: "@jupyterlab/rendermime-interfaces@npm:3.8.10"
   dependencies:
     "@lumino/coreutils": ^1.11.0 || ^2.1.2
     "@lumino/widgets": ^1.37.2 || ^2.3.0
-  checksum: 8095fc99f89e49ef6793e37d7864511cc182fd2260219d3fe94dc974ac34411d4daf898f237279bd5e097aea19cca04196356bf31bd774e94c77b54894baf71b
+  checksum: 46775a03440ac26c661f9b050153a445c8fc3490a39ad776e74dffbbb75e6227ad257f3d4452f4bd435f9cb6db2572ebd8f9794cc12669b17479195c0e709f96
   languageName: node
   linkType: hard
 

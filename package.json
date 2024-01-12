@@ -62,9 +62,6 @@
     "rimraf": "^5.0.5",
     "typescript": "~5.0.3"
   },
-  "resolutions": {
-    "@jupyterlab/rendermime-interfaces": "3.8.7"
-  },
   "sideEffects": [
     "style/*.css",
     "style/*.svg",
