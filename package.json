@@ -1,6 +1,6 @@
 {
   "name": "jupyterlab-friendly-traceback",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Add a boutton to activate/deactivate friendly traceback",
   "keywords": [
     "jupyter",
@@ -46,13 +46,13 @@
     "watch:src": "tsc -w"
   },
   "dependencies": {
-    "@jupyterlab/application": "^4.0.10",
-    "@jupyterlab/launcher": "^4.0.10",
-    "@jupyterlab/notebook": "^4.0.10",
-    "@jupyterlab/ui-components": "^4.0.10"
+    "@jupyterlab/application": "^4.1.0",
+    "@jupyterlab/launcher": "^4.1.0",
+    "@jupyterlab/notebook": "^4.1.0",
+    "@jupyterlab/ui-components": "^4.1.0"
   },
   "devDependencies": {
-    "@jupyterlab/builder": "^4.0.10",
+    "@jupyterlab/builder": "^4.1.0",
     "eslint": "8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
@@ -60,7 +60,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^3.1.1",
     "rimraf": "^5.0.5",
-    "typescript": "~5.0.3"
+    "typescript": "~5.1.6"
   },
   "sideEffects": [
     "style/*.css",

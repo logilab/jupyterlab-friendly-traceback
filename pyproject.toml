@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling>=1.5.0", "jupyterlab>=4.0.0,<5", "hatch-nodejs-version"]
+requires = ["hatchling>=1.5.0", "jupyterlab>=4.1.0,<5", "hatch-nodejs-version", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
@@ -24,8 +24,8 @@ classifiers = [
 
 dynamic = ["dependencies", "version", "description", "authors", "urls", "keywords"]
 
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
 
 [tool.hatch.version]
 source = "nodejs"
@@ -40,8 +40,6 @@ exclude = [".gitlab", "binder"]
 [tool.hatch.build.targets.wheel.shared-data]
 "jupyterlab_friendly_traceback/labextension" = "share/jupyter/labextensions/jupyterlab-friendly-traceback"
 "install.json" = "share/jupyter/labextensions/jupyterlab-friendly-traceback/install.json"
-"jupyter-config/server-config" = "etc/jupyter/jupyter_server_config.d"
-"jupyter-config/nb-config" = "etc/jupyter/jupyter_notebook_config.d"
 
 [tool.hatch.build.hooks.version]
 path = "jupyterlab_friendly_traceback/_version.py"
@@ -70,7 +68,7 @@ version_cmd = "hatch version"
 
 [tool.jupyter-releaser.hooks]
 before-build-npm = [
-    "python -m pip install 'jupyterlab>=4.0.0,<5'",
+    "python -m pip install 'jupyterlab>=4.1.0,<5'",
     "jlpm",
     "jlpm build:prod"
 ]
